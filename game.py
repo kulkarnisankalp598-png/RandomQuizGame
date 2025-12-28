@@ -38,3 +38,8 @@ for i,q in enumerate(quiz,start=1):
         score += 1
     else:
         print(f"Incorrect! The correct answer is: {q['answer']}")
+
+
+print(f"\nYou got {score} out of {len(quiz)} correct!")
+percent= (score/len(quiz))*100
+print(f"Score: {percent:.2f}%")
