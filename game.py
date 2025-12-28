@@ -23,3 +23,9 @@ quiz = [
         "answer": "Central Processing Unit"
     }
 ]
+random.shuffle(quiz)
+
+for i,q in enumerate(quiz,start=1):
+    print(f"\nQuestion {i}: {q['question']}")
+    for idx, option in enumerate(q['options'],start=1):
+        print(f"{idx}. {option}")
