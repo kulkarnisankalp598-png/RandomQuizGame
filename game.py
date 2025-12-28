@@ -24,8 +24,17 @@ quiz = [
     }
 ]
 random.shuffle(quiz)
+score=0
 
 for i,q in enumerate(quiz,start=1):
     print(f"\nQuestion {i}: {q['question']}")
     for idx, option in enumerate(q['options'],start=1):
         print(f"{idx}. {option}")
+    user_input= input("Enter the number of your answer: ").strip()
+    while user_input not in [str(n) for n in range(1, len(q["options"]) + 1)]:
+        user_input= input("Invalid Choice! Enter a number: ").strip()
+    if q["options"][int(user_input)-1].lower() == q["answer"].lower():
+        print("Correct!")
+        score += 1
+    else:
+        print(f"Incorrect! The correct answer is: {q['answer']}")
